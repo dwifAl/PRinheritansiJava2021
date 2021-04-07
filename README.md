@@ -40,6 +40,7 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
      -- Class turunan : Pintu, Senjata, dan Perisai
 4. Tambahn Polymorphisme
    - class player method setObjGame info, turunan dari class karakter
+   
    public class Player extends Karakter{
       @Override
        public void setObjGameInfo(GameInfo objGameInfo) {
@@ -49,6 +50,7 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
    }
    
    - class senjata dan perisai, parent class item, pada method item pakai dan item lepas
+   
     //method pakai Item
     @Override
     public void itemPakai(Player player) {
@@ -71,13 +73,13 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
             player.setAtk(player.getAtk()-this.atk);
             System.out.println("Item berhasil dilepas");
         }
-
         else{
             System.out.println("Belum ada Senjata yang digunakan");
         }
     }
     
    - pada class pintu yang merupakan turunan kelas item terdapat konsep polymorphisme pada getAksi dan prosesAksi
+   
    public void prosesAksi(int subPil) {
         //1: deskripsikan
         //2: buka pintu
@@ -89,12 +91,9 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
             if (objGameInfo.getObjPlayer().cariItem("Palu")) {
                 //kunci ada, pintu terbuka
                 System.out.println("Player menggunakan Palu untuk mendobrak pintu dan pintu terbuka!");
-
                 //objGameInfo.setGameOver(true);
-
                 //set keterangan pintu di ruangan 1 untuk masuk ke ruangan kedua kebuka
                 objGameInfo.getObjRuangan().getObjPintu().setPintuTerbuka(true); //set isPintuTerbuka = true
-
             }
             else {
                 //kunci tidak ada
