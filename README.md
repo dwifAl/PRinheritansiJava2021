@@ -41,36 +41,61 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
 4. Tambahn Polymorphisme
    - class player method setObjGame info, turunan dari class karakter
    
+   
    public class Player extends Karakter{
-      @Override
+   
+   
+     @Override
+     
        public void setObjGameInfo(GameInfo objGameInfo) {
+       
            this.objGameInfo = objGameInfo;
+           
            objItem.setObjGameInfo(objGameInfo);
+           
        }
+       
    }
+   
    
    - class senjata dan perisai, parent class item, pada method item pakai dan item lepas
    
     //method pakai Item
+    
     @Override
+    
     public void itemPakai(Player player) {
+    
         if (this.isStatusPemakaian() == false){
+        
             this.setStatusPemakaian(true);
+            
             player.setAtk(player.getAtk()+this.atk);
+            
             System.out.println("Item berhasil digunakan");
+            
         }
+        
         else{
+        
             System.out.println("Sudah ada Senjata yang digunakan");
+            
         }
 
     }
 
     @Override
+    
     //method lepas item
+    
     public void itemLepas(Player player) {
+    
         if (this.isStatusPemakaian() == true){
+        
             this.setStatusPemakaian(false);
+            
             player.setAtk(player.getAtk()-this.atk);
+            
             System.out.println("Item berhasil dilepas");
         }
         else{
@@ -81,8 +106,10 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
    - pada class pintu yang merupakan turunan kelas item terdapat konsep polymorphisme pada getAksi dan prosesAksi
    
    public void prosesAksi(int subPil) {
+   
         //1: deskripsikan
         //2: buka pintu
+        
         if (subPil==1) {
             System.out.println("Pintu tua dengan pegangan pintunya yang sudah rusak");
         }
@@ -101,7 +128,9 @@ Deskripsi modifikasi/tambahan dari kode sebelumnya:
             }
         }
     }
+    
     public ArrayList<String> getAksi() {
+   
         return arrAksi;
     }
    
